@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&family=Space+Mono:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Space Mono', monospace;
+}
+
+:root {
+    --primary-color: #0079ff;
+    --bg-color: #f6f8ff;
+    --content-bg: #fefefe;
+    --input-placeholder: #4b6a9b;
+    --mode-color: #697c9a;
+    --number-color: #2b3442;
+    --text-color: #222731;
+}
+
+/* Main Container */
+main {
+    background-color: var(--bg-color);
+    padding: 73px 0;
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    min-width: 730px;
+    width: 60%;
+}
+
+.logo a,
+.color-mode small,
+.search-bar input[type='submit'] {
+    font-weight: 700;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.logo a,
+.color-mode small {
+    color: var(--text-color);
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.color-mode small::after {
+    content: 'DARK';
+}
+
+.color-mode {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.color-mode small {
+    margin-top: 3px;
+    margin-right: 10px;
+    font-size: 13px;
+}
+
+.bi.bi-brightness-low-fill {
+    display: none;
+}
+
+/* Search bar section */
+.search-bar {
+    margin-bottom: 25px;
+}
+
+.form-container {
+    position: relative;
+}
+
+.search-bar input[type="search"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 22px 80px;
+    font-size: 18px;
+    background-color: var(--content-bg);
+    color: var(--text-color);
+}
+
+.search-bar input[type="search"]::placeholder {
+    color: var(--input-placeholder);
+    font-size: 18px;
+}
+
+.search-bar img,
+input[type="submit"],
+.error-msg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.error-msg {
+    color: red;
+    right: 140px;
+    font-weight: 700;
+    display: none;
+}
+
+.search-bar img {
+    left: 32px;
+    cursor: pointer;
+}
+
+.search-bar input[type='submit'] {
+    right: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.search-bar input[type='submit']:hover {
+    background-color: #60abff;
+}
+
+.search-bar,
+.github-user {
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.1);
+    background-color: var(--content-bg);
+    border-radius: 15px;
+}
+
+/* Github user section */
+.github-user {
+    display: flex;
+    justify-content: space-between;
+    padding: 48px;
+}
+
+.github-user .profile-img {
+    margin-right: 37px;
+}
+
+.github-user .profile-img img {
+    border-radius: 50%;
+    width: 117px;
+}
+
+.github-user .profile-info {
+    width: 80%;
+}
+
+.profile-info .profile {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.profile-info .profile h1 {
+    font-size: 26px;
+}
+
+.profile-info .profile small {
+    color: var(--mode-color);
+    padding: 10px 0;
+    font-size: 15px;
+    text-align: end;
+}
+
+.profile-info .profile a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.profile-info p {
+    font-size: 15px;
+    margin: 20px 0px 32px;
+    color: var(--input-placeholder);
+}
+
+/* Data Info section */
+.profile-info .data-info {
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 33.3%);
+    padding: 15px 32px;
+    margin-bottom: 32px;
+}
+
+.data-info .data-section small {
+    color: var(--input-placeholder);
+    font-size: 13px;
+}
+
+.data-info .data-section h2 {
+    font-size: 22px;
+    line-height: 33px;
+    color: var(--number-color);
+}
+
+/* Social media section */
+.profile-info .social-media {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.social-media .social-link {
+    margin-bottom: 15px;
+}
+
+.social-link a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.social-link a small {
+    color: var(--input-placeholder);
+    margin-left: 16px;
+}
+
+.not-available {
+    opacity: 0.5;
+}
+
+/* ************** Tablet Mode ****************** */
+@media(max-width : 768px) {
+    .container {
+        min-height: 573px;
+    }
+
+    .github-user {
+        padding: 40px;
+        display: block;
+    }
+
+    .github-user .profile-img {
+        float: left;
+    }
+
+    .github-user .profile-info .profile {
+        height: 117px;
+        position: relative;
+    }
+
+    .profile-info {
+        width: 100%;
+    }
+
+    .profile-info .profile a,
+    .profile-info .profile small,
+    .profile-info .profile h1 {
+        position: absolute;
+    }
+
+    .profile-info .profile h1 {
+        top: 14px;
+    }
+
+    .profile-info .profile a {
+        top: 51px;
+    }
+
+    .profile-info .profile small {
+        bottom: 14px;
+        padding: 0;
+    }
+
+    .profile-info p {
+        margin-top: 24px;
+    }
+}
+
+
+/* ********************** Mobile Mode ********************* */
+@media (max-width : 640px) {
+    main {
+        padding-top: 31px;
+    }
+
+    .container {
+        width: 87%;
+        min-width: 327px;
+    }
+}
+
+@media (max-width: 570px) {
+    header {
+        margin-bottom: 35px;
+    }
+
+    .search-bar input[type='search'] {
+        font-size: 13px;
+        padding: 20px 45px;
+    }
+
+    .search-bar input[type='search']::placeholder,
+    .error-msg {
+        font-size: 13px;
+    }
+
+    .search-bar img {
+        left: 16px;
+        font-size: 13px;
+    }
+
+    .search-bar input[type='submit'] {
+        font-size: 13px;
+        right: 7px;
+        padding: 12px 14px;
+        width: 85px;
+    }
+
+    .github-user {
+        padding: 32px 24px;
+    }
+
+    .github-user .profile-img {
+        width: 22%;
+        margin-right: 20px;
+    }
+
+    .github-user .profile-img img {
+        width: 70px;
+    }
+
+    .github-user .profile-info .profile {
+        height: 70px;
+    }
+
+    .profile-info .profile h1 {
+        font-size: 16px;
+        top: 1px;
+    }
+
+    .profile-info .profile a,
+    .profile-info p,
+    .profile-info .profile small {
+        font-size: 13px;
+    }
+
+    .profile-info .profile a {
+        top: 25px;
+    }
+
+    .profile-info .profile small {
+        bottom: 0;
+    }
+
+    .profile-info p {
+        margin: 30px 0 23px;
+    }
+
+    .github-user .data-info {
+        padding: 18px 15px;
+        width: 128%;
+    }
+
+    .github-user .data-info .data-section {
+        text-align: center;
+    }
+
+    .data-info .data-section small {
+        font-size: 11px;
+        line-height: 17px;
+    }
+
+    .data-info .data-section h2 {
+        font-size: 16px;
+    }
+
+    .github-user .social-media {
+        grid-template-columns: auto;
+    }
+
+    .social-link a small {
+        margin-left: 13px;
+        font-size: 13px;
+    }
+}

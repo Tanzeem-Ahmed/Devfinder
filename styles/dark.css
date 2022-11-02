@@ -1,0 +1,41 @@
+:root {
+    --primary-color: #0079ff;
+    --bg-color: #141d2f;
+    --content-bg: #1e2a47;
+    --input-placeholder: #ffffff;
+    --mode-color: #ffffff;
+    --number-color: #ffffff;
+    --text-color: #ffffff;
+}
+
+.bi.bi-moon-fill {
+    display: none;
+}
+
+.bi.bi-brightness-low-fill {
+    display: inline-block;
+}
+
+.color-mode small::after {
+    content: 'LIGHT';
+}
+
+.color-mode small:hover {
+    color: #90a4d4;
+}
+
+.color-mode .bi.bi-brightness-low-fill path:hover {
+    fill: #90a4d4;
+}
+
+.github-user .search-bar {
+    box-shadow: none;
+}
+
+.profile-info .profile h1 {
+    color: var(--text-color);
+}
+
+.social-link a svg path {
+    fill: var(--text-color);
+}
