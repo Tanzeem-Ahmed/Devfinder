@@ -58,40 +58,41 @@ function getUserDetails(username) {
 
         // setting the social links
         // Location
-        if (data["location"] == null) {
+        if (data["location"] === null) {
           socialMedia.children[0].firstElementChild.lastElementChild.innerText =
             "Not Available";
-          socialMedia.children[0].style.opacity = "0.5";
+            socialMedia.children[0].firstElementChild.classList.add("not-available");
         } else {
           socialMedia.children[0].firstElementChild.lastElementChild.innerText =
             data["location"];
         }
 
         // Blog
-        if (data["blog"] == "") {
+        if (data["blog"] === "") {
           socialMedia.children[1].firstElementChild.lastElementChild.innerText =
             "Not Available";
-          socialMedia.children[1].style.opacity = "0.5";
+            socialMedia.children[1].firstElementChild.classList.add("not-available");
         } else {
           socialMedia.children[1].firstElementChild.lastElementChild.innerText =
             data["blog"];
+            socialMedia.children[1].firstElementChild.href = data["blog"];
         }
 
         // Twitter
-        if (data["twitter_username"] == null) {
+        if (data["twitter_username"] === null) {
           socialMedia.children[2].firstElementChild.lastElementChild.innerText =
             "Not Available";
-          socialMedia.children[2].style.opacity = "0.5";
+          socialMedia.children[2].firstElementChild.classList.add("not-available");
         } else {
           socialMedia.children[2].firstElementChild.lastElementChild.innerText =
             data["twitter_username"];
         }
 
         // Company
-        if (data["company"] == null) {
+        if (data["company"] === null) {
           socialMedia.children[3].firstElementChild.lastElementChild.innerText =
             "Not Available";
-          socialMedia.children[3].style.opacity = "0.5";
+            socialMedia.children[3].firstElementChild.classList.add("not-available");
         } else {
           socialMedia.children[3].firstElementChild.lastElementChild.innerText =
             data["company"];
@@ -114,3 +115,5 @@ getUserDetails(defaultUser);
 
 colorMode.onclick = switchTheme;
 search.onsubmit = searchUser;
+
+window.onload = getUserDetails;
