@@ -34,7 +34,6 @@ function getUserDetails(username) {
         if ((errorMsg.style.display = "inline-block")) {
           errorMsg.style.display = "none";
         }
-        console.log(data);
 
         // adding profile img
         userImage.src = data["avatar_url"];
@@ -86,6 +85,7 @@ function getUserDetails(username) {
         } else {
           socialMedia.children[2].firstElementChild.lastElementChild.innerText =
             data["twitter_username"];
+            socialMedia.children[2].firstElementChild.style.opacity = '1';
         }
 
         // Company
