@@ -64,6 +64,7 @@ function getUserDetails(username) {
         } else {
           socialMedia.children[0].firstElementChild.lastElementChild.innerText =
             data["location"];
+            socialMedia.children[0].firstElementChild.style.opacity = '1';
         }
 
         // Blog
@@ -75,6 +76,7 @@ function getUserDetails(username) {
           socialMedia.children[1].firstElementChild.lastElementChild.innerText =
             data["blog"];
             socialMedia.children[1].firstElementChild.href = data["blog"];
+            socialMedia.children[1].firstElementChild.style.opacity = '1';
         }
 
         // Twitter
@@ -96,6 +98,7 @@ function getUserDetails(username) {
         } else {
           socialMedia.children[3].firstElementChild.lastElementChild.innerText =
             data["company"];
+            socialMedia.children[3].firstElementChild.style.opacity = '1';
         }
       }
     });
